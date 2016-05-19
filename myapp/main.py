@@ -1,7 +1,7 @@
 
 from flask import Flask, url_for, render_template, request, \
     redirect, abort, session, g, flash, Markup
-from myapp import app
+from sbsapi import app
 
 
 @app.route('/event', defaults={"path": ""})
