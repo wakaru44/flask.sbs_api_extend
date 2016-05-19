@@ -4,8 +4,8 @@ from flask import Flask, url_for, render_template, request, \
 from sbsapi import app
 
 
-@app.route('/event', defaults={"path": ""})
-@app.route('/event/<path:whatever>')
+@app.route('/v1/', defaults={"path": ""})
+@app.route('/v1/<path:whatever>')
 def event_listener(whatever):
     app.logger.info(whatever)
     """
@@ -16,7 +16,7 @@ def event_listener(whatever):
 
 @app.route('/')
 def index():
-    return "You are at the homepage!"
+    return render_template("hello.html")
 
 
 @app.route('/redirect-to-<function>')
